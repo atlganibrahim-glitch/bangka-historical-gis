@@ -1,6 +1,16 @@
 # Georeferencing and Mosaicking of 176 Historical Dutch
 # Topographic Maps of Bangka Island — Methodology (Revised)
 
+> **Superseded (August 2026).** This document's headline claim — that the 12
+> composite sheets have "zero overlaps" and are "correctly placed" — turned
+> out to be wrong: all 12 derived their scale from a fixed nominal value
+> instead of one true 5′ cell edge, so they overhung their neighbours by up
+> to 278 m along a 9.3 km seam (21 overlapping sheet pairs total). This
+> document's claim that neatline detection was attempted and failed also no
+> longer holds — it succeeds cleanly on the 2026 crops. See
+> [`V3_REPORT.md`](V3_REPORT.md) for the corrected pipeline and current
+> numbers. Kept below for provenance.
+
 ---
 
 ## Overview

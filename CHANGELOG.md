@@ -1,5 +1,25 @@
 # Changelog
 
+## v3 / v3.1 (August 2026)
+Full rebuild from new neatline-accurate crops, prompted by a report that the
+published v2 GeoTIFFs had imperfect crops and that the composite sheets did
+not align with their neighbours. Root cause, fix, and measured accuracy are
+in [`V3_REPORT.md`](V3_REPORT.md); summary:
+
+- Composite sheets no longer overhang their neighbours (21 overlapping pairs
+  in v2 → 0 in v3).
+- 2 single-letter sheets found to be irregular (not full 5′ cells) and fixed
+  the same way as the composites.
+- Every non-standard sheet's anchor edge (which side sits on the graticule)
+  is now backed by measurement against OSM (shoreline or road network), not
+  assumed from the sub-code rule alone.
+- v3.1 adds a small measured inland correction (+200.4 m E / −66.8 m N).
+- New pipeline: [`v3/`](v3/). New metadata: `bangka_dataset_v3.csv` /
+  `bangka_dataset_v3_1.csv`, plus a per-sheet positional-quality table,
+  `bangka_sheet_quality.csv`.
+- `bangka_dataset_v2.csv` (below) is unaffected — the v3 rebuild used the new
+  crops directly, not this CSV's margin values.
+
 ## bangka_dataset_v2.csv
 Updated/corrected version of the original `bangka_dataset.csv` (which was
 provided as source material by Thomas Smits; original compiler undocumented).

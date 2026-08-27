@@ -6,5 +6,6 @@ dependencies:
   - gdal            # osgeo.gdal / osgeo.osr — used by all georef scripts
   - numpy           # recalc_margins.py, archive/georef_grid.py, ...
   - pandas          # metadata / CSV handling
-  - pillow          # PIL — map_crop.py
-  - opencv          # cv2  — map_crop.py
+  - pillow          # PIL — map_crop.py, v3/*
+  - opencv          # cv2  — map_crop.py, v3/*
+  - rasterio        # v3/georeference.py and the rest of v3/*

@@ -5,60 +5,73 @@
 ![GIS](https://img.shields.io/badge/GIS-QGIS%20%7C%20GDAL-orange.svg)
 [![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow.svg)](https://huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps)
 
-📦 **Full ~6 GB dataset (GeoTIFFs + raw/cropped scans):** [huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps](https://huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps)
+This repository georeferences 176 sheets of the **1930s Dutch Colonial
+Topographic Map Series of Bangka Island** (`KK 083-04-01/085-04-10`) into
+WGS 84 (EPSG:4326) GeoTIFFs, as a ground-truth base layer for deep-learning
+analysis of historical land use.
 
-> **v3.1 (August 2026) supersedes the published v2 dataset.** The sheets have been
-> rebuilt from neatline-accurate crops, placed by the printed map frame rather
-> than the edge of the scan, with every irregular sheet's anchoring verified
-> against the modern shoreline. See [`V3_REPORT.md`](V3_REPORT.md) for what was
-> wrong with v2, what changed, and the measured accuracy.
-> New pipeline: [`v3/`](v3/) · outputs: `GEOREF_V3_1/` (recommended) and
-> `GEOREF_V3/` · metadata: `bangka_dataset_v3_1.csv` / `bangka_dataset_v3.csv`.
-> v3.1 adds an inland offset (+200.4 m E / −66.8 m N) measured against the OSM
-> road network; v3.0 is the purely graticule-derived grid.
->
-> The v2 scripts below (`map_crop.py`, `automated_georef.py`, …) are kept for
-> provenance only. Note that `automated_georef.py` never reproduced the
-> published v2 rasters: its calibration constants differ from the ones baked
-> into the data by 1.2 km in latitude.
+## Status (August 2026)
 
-## Overview / Proje Hakkında
+| | version | rasters | metadata | GeoTIFFs on Hugging Face |
+|---|---|---|---|---|
+| **current** | v3.1 | `GEOREF_V3_1/` (local, not yet tracked in git — see below) | `bangka_dataset_v3_1.csv` | **not yet uploaded** |
+| superseded | v2 | `GEOREF_FINAL_STANDARD_164/`, `GEOREF_FINAL_COMPOSITE_12/` | `bangka_dataset_v2.csv` | [uploaded ✅](https://huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps) |
 
-This repository contains the metadata, calibration pipeline, Python GIS automation
-scripts, and technical documentation for georeferencing the **1930s Dutch Colonial
-Topographic Map Series of Bangka Island (KK 083-04-01 / 085-04-10)**.
+**v3.1 supersedes v2.** v2's composite sheets overhung their neighbours by up
+to 278 m along a 9.3 km seam (21 overlapping sheet pairs) and two ordinary
+single-letter sheets were silently squeezed out of shape. v3 rebuilds every
+sheet from the printed neatline instead of the scan edge; v3.1 adds a small,
+measured inland correction. Full account of what was wrong and what changed:
+**[`V3_REPORT.md`](V3_REPORT.md)**.
 
-The pipeline transforms 176 unreferenced historical scanned map sheets into a
-**georeferenced spatial dataset (WGS 84 / EPSG:4326)** intended as a ground-truth base
-layer for **deep-learning / computer-vision** analysis of historical land use and
-long-term deforestation.
+**Open item:** the v3.1 GeoTIFFs (`GEOREF_V3_1/`, ~870 MB) are generated
+locally and verified, but have not yet been uploaded to replace the v2
+archive on Hugging Face. Until that happens, the Hugging Face link above still
+serves v2. The pipeline, metadata, and quality tables for v3.1 are in this
+repository already.
 
-The authoritative English methodology write-up is [`METHODOLOGY_REVISED_EN.md`](METHODOLOGY_REVISED_EN.md); the full technical report is [`bangka_technical_report.md`](bangka_technical_report.md).
+## Quick Start
+
+```python
+import sys
+sys.path.insert(0, "v3")
+import sheet_to_wgs84 as geo
+
+lon, lat = geo.pixel_to_lonlat("34-XXV-e", x=1200, y=850)   # -> WGS 84 coordinate
+```
+
+Or in QGIS: build a VRT over `GEOREF_V3_1/*/*.tif` (`gdalbuildvrt`) and add it
+as one layer — see [`V3_REPORT.md §6`](V3_REPORT.md) for the full reproduction
+steps and other scripts.
 
 ## Dataset Composition
 
-- **164 single-cell sheets** — one 5′ × 5′ graticule cell each.
-- **12 composite sheets** — printed across two adjacent cells (9 vertical 5′ × 10′,
-  3 horizontal 10′ × 5′) to capture coastlines where a full cell would be mostly sea.
+- **162 single-cell sheets** — one 5′ × 5′ graticule cell each.
+- **12 composite sheets** — printed across two adjacent cells (9 vertical
+  5′ × 10′, 3 horizontal 10′ × 5′) to capture coastlines where a full cell
+  would be mostly sea.
+- **2 irregular sheets** (`33-XXVI-d`, `34-XXVII-g`) — ordinary single-letter
+  codes, but printed past their cell like the composites (found during the
+  v3 rebuild; see `V3_REPORT.md §1b`).
 
-## Key Results (verified)
+## Key Results (v3.1, verified — see `V3_REPORT.md` for method and full numbers)
 
-1. **Exact single-cell tiling.** Back-computing the grid origin from all 164 single-cell
-   outputs gives a scatter of **σ = 0.0000′** in both latitude and longitude — the 164
-   sheets tile with no residual gap or overlap.
-2. **Consistent pixel scale.** Measured mean **0.00001904 °/px** vs. the nominal
-   0.00001920 °/px (5′ ÷ 4341 px) — a **−0.85 %** deviation (σ ≈ 0.007 %), i.e. no
-   significant shrinkage.
-3. **Systematic offset (theoretical grid → real world).** A single, highly consistent
-   shift maps the theoretical Dutch graticule onto the OSM-verified real-world position:
-   **+0.14083° (+8.450′) East** and **+0.00012° (+0.007′) North**, σ = 0.0000′. A
-   sub-arc-minute term (Batavia → WGS 84 datum + paper drift, order tens of metres) sits
-   on top of this base.
-4. **Composite anchoring rule.** For every one of the 12 composites, the **first letter
-   of the sub-code names the land cell**, and the sheet is anchored to that cell
-   (12 / 12). Codes are order-sensitive (`ni` = land in lower cell, `in` = land in upper
-   cell). There are **zero cell overlaps**; each composite's companion (sea) cell is
-   intentionally empty.
+1. **Neatline placement.** Every sheet is placed by its detected printed
+   frame, not the scan edge. Max deviation from the exact graticule over 162
+   regular sheets: **8.4 m**.
+2. **No structural overlaps.** 0 overlapping sheet pairs (v2 had 21, all
+   involving composites).
+3. **Evidence-based anchoring.** All 14 non-standard sheets (12 composites +
+   2 irregular) have their anchor edge confirmed by measurement against OSM
+   (shoreline for 10, road network for the other 4) — not assumed.
+4. **Inland accuracy.** Measured against the OSM road network (roads move far
+   less than the coastline over 90 years): median residual **170 m**, with a
+   60-sheet subset converging on a consistent **30 m** median residual after
+   applying the v3.1 correction.
+5. **Coastal accuracy.** Median shoreline residual **~780 m** — dominated by
+   real coastal change since the 1930s (tin dredging, mangrove change), not
+   by georeferencing error; see `V3_REPORT.md §3` before citing this figure
+   as positional accuracy.
 
 ## Data Provenance & Source
 
@@ -83,80 +96,91 @@ institution. Citing Leiden University Libraries as the source is requested.
 ### Dataset metadata provenance & contribution
 `bangka_dataset.csv` (the original sheet index / metadata table) was **not
 compiled by the repository owner**. It was provided as source material by
-Thomas Smits (supervisor); the original compiler of the underlying table is not
-documented beyond this. The contribution in this repository is the
-**correction and maintenance** of that table, producing the updated
-`bangka_dataset_v2.csv`. The georeferencing pipeline and the accuracy metrics
-reported here are the owner's own work.
+Thomas Smits (supervisor); the original compiler of the underlying table is
+not documented beyond this. Thomas Smits also supplied the neatline-accurate
+crops (August 2026) that the v3 rebuild is built from. The georeferencing
+pipeline and the accuracy metrics reported here are the owner's own work.
 
 ## Repository Structure / Klasör Yapısı
 
 ```text
-bangka-historical-gis-dataset/
+bangka-historical-gis/
 ├── README.md                      # This file
-├── METHODOLOGY_REVISED_EN.md      # Verified English methodology
-├── bangka_technical_report.md     # Full technical report
-├── bangka_dataset_v2.csv          # Master metadata & pixel dimensions (176 sheets)
-├── CHANGELOG.md                   # What was corrected from the original CSV → v2
+├── V3_REPORT.md                   # Current methodology, findings, accuracy (READ THIS FIRST)
+├── CHANGELOG.md                   # v1 → v2 → v3/v3.1 change history
+├── bangka_dataset_v3_1.csv        # Current metadata (176 sheets) — use this
+├── bangka_dataset_v3.csv          # v3.0 metadata (no inland correction)
+├── bangka_sheet_quality.csv       # Per-sheet positional confidence + land area
 ├── environment.yml                # Conda environment (recommended install)
-├── .gitignore                     # Excludes heavy raw scans & GeoTIFF outputs
+├── .gitignore
 │
-├── Core pipeline (produces the published dataset):
-│   ├── map_crop.py                # Crop raw scans → recovered_maps/ (Phase 1)
-│   ├── recalc_margins.py          # Recompute margins → bangka_dataset_v2.csv (Phase 1)
-│   ├── automated_georef.py        # Grid + offset georef → GEOREF_FINAL_STANDARD_164/ (Phase 3)
-│   └── crop_margin_geo.py         # Margin correction against the OLD reference
+├── v3/                             # Current pipeline — see V3_REPORT.md §6 to run it
+│   ├── grid.py                    #   sheet geometry: crop pixels -> WGS 84
+│   ├── scan_frames.py             #   detect the printed neatline on every sheet
+│   ├── fit_irregular.py           #   decide composite/irregular anchors vs OSM shoreline
+│   ├── fit_irregular_roads.py     #   same, vs OSM roads, for sheets the shoreline can't decide
+│   ├── georeference.py            #   write the 176 GeoTIFFs
+│   ├── sheet_to_wgs84.py          #   pixel -> lon/lat helper for downstream pipelines
+│   ├── sheet_quality.py           #   builds bangka_sheet_quality.csv
+│   └── ...                        #   verification / accuracy-measurement scripts
 │
-├── QC / diagnostics:
-│   ├── verify_georef.py           # Quick coordinate sanity check
-│   ├── osm_alignment_check.py     # Manual OSM alignment helper (QGIS console)
-│   └── calibration_comparison.py  # Derive the systematic offset from a manual reference
+├── qgis/                          # Portable QGIS layers (vector; .vrt rasters are local-only)
+│   ├── sheet_index_v3.geojson     #   every sheet's printed-frame footprint + attributes
+│   └── graticule_5min.geojson     #   the theoretical 5' cell grid
 │
-└── archive/                       # Experimental scripts + the original source CSV (reference)
-    ├── bangka_dataset.csv         # Original metadata table (source material; superseded by v2)
-    └── README.md                  #   georef_grid.py, corrected_georef.py, diagnose_georef.py, ...
+├── Superseded (v2) — kept for provenance, see the notice at the top of each:
+│   ├── METHODOLOGY_REVISED_EN.md  #   v2 methodology write-up
+│   ├── bangka_technical_report.md #   v2 technical report
+│   ├── bangka_dataset_v2.csv      #   v2 metadata
+│   ├── map_crop.py, automated_georef.py, recalc_margins.py, crop_margin_geo.py
+│   ├── verify_georef.py, osm_alignment_check.py, calibration_comparison.py
+│   └── archive/                   #   experimental scripts + the original source CSV
+│
+└── (not tracked in git — see .gitignore) new_crops/, GEOREF_V3_1/, GEOREF_V3/,
+    GEOREF_FINAL_STANDARD_164/, GEOREF_FINAL_COMPOSITE_12/, main maps/, recovered_maps/
 ```
 
 ## Downloading the Full Map Dataset (GeoTIFFs)
 
-Due to GitHub size limits (100 MB per file; large repos discouraged), the georeferenced
-GeoTIFF archives (`GEOREF_FINAL_STANDARD_164/`, `GEOREF_FINAL_COMPOSITE_12/`) and the raw
-scans (`main maps/`, `recovered_maps/`) are **not** tracked in this Git repository. The
-full ~6 GB dataset is hosted on the Hugging Face Hub:
+Due to GitHub size limits, the georeferenced GeoTIFF archives and raw scans
+are not tracked in this Git repository.
 
-**📦 https://huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps**
+- **v2 (currently on Hugging Face):**
+  **📦 https://huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps**
 
-```python
-from huggingface_hub import snapshot_download
-snapshot_download(
-    repo_id="ibrahimatlgn/bangka-1930s-topographic-maps",
-    repo_type="dataset",
-    local_dir="bangka_data",
-    allow_patterns=["GEOREF_FINAL_STANDARD_164/*"],  # or omit to fetch everything
-)
-```
+  ```python
+  from huggingface_hub import snapshot_download
+  snapshot_download(
+      repo_id="ibrahimatlgn/bangka-1930s-topographic-maps",
+      repo_type="dataset",
+      local_dir="bangka_data",
+  )
+  ```
+
+- **v3.1 (current, not yet uploaded):** reproduce locally with `v3/georeference.py`
+  (needs the neatline-accurate crops — ask the repository owner if you need
+  them and don't already have `new_crop_maps.zip`), or check back here /
+  on Hugging Face for the re-upload.
 
 ## Using the Data (Quick Start)
 
-The published outputs are plain **GeoTIFF** rasters in **WGS 84 (EPSG:4326)** — no
-special tooling is needed, any GIS reads them directly.
+The rasters are plain **GeoTIFF** in **WGS 84 (EPSG:4326)** — no special
+tooling needed, any GIS reads them directly. Each carries an internal mask
+that hides the paper outside the printed neatline, so sheets mosaic without
+double coverage.
 
-1. **Get the rasters.** Download `GEOREF_FINAL_STANDARD_164/` (the 164 single-cell
-   sheets) and, if you need the coastline sheets, `GEOREF_FINAL_COMPOSITE_12/` from the
-   external host (see below). The scripts in this repo are only needed if you want to
-   *reproduce* the georeferencing — not to *use* the maps.
-2. **Open them.** In **QGIS**: `Layer → Add Layer → Add Raster Layer…`, select the
-   `.tif` files (you can multi-select the whole folder). They land in their real-world
-   position automatically. To start, open a few single-cell sheets from
-   `GEOREF_FINAL_STANDARD_164/` — they tile seamlessly (σ = 0.0000′).
-3. **Add a basemap for context** (optional): `XYZ Tiles → OpenStreetMap`, so the
-   historical sheets overlay on modern geography.
-4. **Composites:** each of the 12 composite sheets covers a land cell plus an
-   (intentionally empty) sea cell; place them the same way — they will not overlap the
-   single-cell sheets.
-5. **Command-line check** (optional): to confirm a downloaded folder is correctly
-   georeferenced, run `python verify_georef.py`, which prints the corner coordinates of
-   the first few sheets. Inspect any single file with `gdalinfo <sheet>.tif`.
+1. **Get the rasters** — v3.1 preferred (see above).
+2. **Open them in QGIS:** `Layer → Add Layer → Add Raster Layer…`, multi-select
+   the `.tif` files, or build a single VRT with `gdalbuildvrt` over the whole
+   folder for one merged layer (recommended — 176 individual layers is slow).
+3. **Add a basemap for context** (optional): `XYZ Tiles → OpenStreetMap`.
+4. **Composites and irregular sheets** place correctly against their
+   neighbours without any special handling — the anchor logic is baked into
+   the GeoTIFF's geographic extent.
+5. **Converting detection pixel coordinates to WGS 84** (e.g. from a YOLO
+   pipeline run on the crops): use `v3/sheet_to_wgs84.py`, which also handles
+   the old-crop → new-crop pixel shift if your coordinates were measured on
+   the v2 crops.
 
 ## Requirements & Installation
 
@@ -169,22 +193,30 @@ conda env create -f environment.yml
 conda activate bangka-gis
 ```
 
-(pip alternative: `pip install numpy pandas gdal opencv-python Pillow` — but the
-GDAL wheel often fails to build; conda-forge is strongly preferred.)
-
 ```bash
-# Expected input layout: raw scans in 'main maps/', crops in 'recovered_maps/',
-# original metadata table in 'archive/bangka_dataset.csv'.
-# Reproduce the pipeline (run from the repository root, in order):
-python map_crop.py          # 1. crop raw scans      → recovered_maps/
-python recalc_margins.py    # 2. recompute margins   → bangka_dataset_v2.csv
-python automated_georef.py  # 3. grid + offset georef → GEOREF_FINAL_STANDARD_164/
-python crop_margin_geo.py   # 4. margin correction against the reference
+# v3.1 pipeline (current) — run from the repository root, in order.
+# Expects the neatline-accurate crops in new_crops/map/*.jpg.
+python v3/scan_frames.py       # 1. measure every printed neatline -> v3/frames.csv
+python v3/build_masks.py       # 2. cache sea masks / shorelines   -> v3/masks/
+python v3/fit_irregular.py     # 3. decide composite/irregular anchors vs OSM shoreline
+python v3/fit_irregular_roads.py  # 4. same, vs OSM roads, for the sheets §3 couldn't decide
+python v3/georeference.py      # 5. write the 176 GeoTIFFs          -> GEOREF_V3_1/
+python v3/build_metadata.py    # 6. metadata                        -> bangka_dataset_v3_1.csv
+python v3/sheet_quality.py     # 7. per-sheet quality table          -> bangka_sheet_quality.csv
 ```
+
+The superseded v2 pipeline (`map_crop.py` → `recalc_margins.py` →
+`automated_georef.py` → `crop_margin_geo.py`) still runs but is not
+recommended; see the notice at the top of `METHODOLOGY_REVISED_EN.md`.
 
 ## Known Limitations
 
-- The "seamless" claim is quantified for the 164 single-cell sheets (σ = 0.0000′). A
-  per-sheet accuracy figure for the 12 composites (e.g. OSM overlay or neatline residual)
-  is a recommended next step; automated neatline detection was attempted but the printed
-  frame lines on these scans proved too faint for reliable measurement.
+- The v3.1 GeoTIFFs are not yet re-uploaded to Hugging Face (see Status
+  above).
+- 4 of the 14 non-standard sheets' anchors were confirmed via the OSM road
+  network rather than the (unavailable) shoreline; see `V3_REPORT.md §2` for
+  which ones and the margin of evidence.
+- Coastal accuracy cannot be measured below ~780 m by comparison with modern
+  imagery, because the coastline itself has moved that much since the 1930s.
+  Inland accuracy (roads, buildings) is the better proxy and is measured
+  separately — see `V3_REPORT.md §3`.
