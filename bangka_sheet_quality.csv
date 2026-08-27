@@ -1,0 +1,177 @@
+sheet_id,image_idx,kind,anchor,anchor_evidence,frame_measured,positional_grade,road_fit_resid_m,road_fit_shift_m,old_crop_shift_px,land_km2,sea_fraction,sheet_km2,notes
+31-XXIV-q,0,single,cell,n/a (full cell),both,B,21,252,11.3,22.11,0.745,86.75,road fit scattered; modern road density likely confused it
+31-XXV-dh,1,composite,top,shoreline,both,A,82,100,33.1,32.69,0.637,89.95,"road fit agrees with the global calibration; composite sheet, extends 389 m beyond its cell; anchor confirmed by shoreline (389 m margin over the other edge)"
+32-XXIII-m,2,single,cell,n/a (full cell),both,B,,,0.0,17.35,0.799,86.47,not enough road ink to check independently
+32-XXIII-p,3,single,cell,n/a (full cell),both,B,,,16.9,86.41,0.0,86.41,not enough road ink to check independently
+32-XXIII-q,4,single,cell,n/a (full cell),both,B,,,4.0,86.33,0.0,86.33,not enough road ink to check independently
+32-XXIV-c,5,single,cell,n/a (full cell),both,A,21,45,8.0,49.35,0.428,86.24,road fit agrees with the global calibration
+32-XXIV-d,6,single,cell,n/a (full cell),both,A,128,98,24.0,85.08,0.015,86.35,road fit agrees with the global calibration
+32-XXIV-g,7,single,cell,n/a (full cell),both,B,,,0.0,86.49,0.0,86.49,not enough road ink to check independently
+32-XXIV-h,8,single,cell,n/a (full cell),both,B,243,246,7.6,71.33,0.175,86.5,road fit scattered; modern road density likely confused it
+32-XXIV-k,9,single,cell,n/a (full cell),both,A,43,0,8.9,86.65,0.0,86.65,road fit agrees with the global calibration
+32-XXIV-l,10,single,cell,n/a (full cell),both,A,170,143,13.8,84.39,0.023,86.35,road fit agrees with the global calibration
+32-XXIV-m,11,single,cell,n/a (full cell),both,A,21,0,7.2,86.35,0.0,86.35,road fit agrees with the global calibration
+32-XXIV-ni,12,composite,bottom,shoreline,both,B,,,14.2,87.06,0.114,98.28,"not enough road ink to check independently; composite sheet, extends 1284 m beyond its cell; anchor confirmed by shoreline (1284 m margin over the other edge)"
+32-XXIV-o,13,single,cell,n/a (full cell),height,C,408,931,20.6,86.46,0.0,86.46,road fit scattered; modern road density likely confused it; frame only partly measurable (height)
+32-XXIV-p,14,single,cell,n/a (full cell),both,A,30,31,6.1,86.45,0.0,86.45,road fit agrees with the global calibration
+32-XXIV-q,15,single,cell,n/a (full cell),both,B,,,3.7,86.6,0.0,86.6,not enough road ink to check independently
+32-XXV-a,16,single,cell,n/a (full cell),both,A,128,0,7.4,86.43,0.0,86.43,road fit agrees with the global calibration
+32-XXV-b,17,single,cell,n/a (full cell),both,B,447,379,6.2,83.66,0.036,86.75,road fit scattered; modern road density likely confused it
+32-XXV-c,18,single,cell,n/a (full cell),both,B,489,427,0.0,86.38,0.0,86.38,road fit scattered; modern road density likely confused it
+32-XXV-d,19,single,cell,n/a (full cell),both,B,437,1448,17.9,43.92,0.492,86.4,road fit scattered; modern road density likely confused it
+32-XXV-f,20,single,cell,n/a (full cell),both,B,,,37.6,34.5,0.601,86.38,not enough road ink to check independently
+32-XXV-g,21,single,cell,n/a (full cell),both,B,,,4.5,54.01,0.376,86.5,not enough road ink to check independently
+32-XXV-h,22,single,cell,n/a (full cell),both,A,149,126,9.8,50.15,0.419,86.24,road fit agrees with the global calibration
+33-XXIII-i,23,single,cell,n/a (full cell),both,A,52,126,13.1,30.96,0.641,86.33,road fit agrees with the global calibration
+33-XXIII-k,24,single,cell,n/a (full cell),both,A,61,45,11.3,86.43,0.0,86.43,road fit agrees with the global calibration
+33-XXIII-l,25,single,cell,n/a (full cell),width,B,82,140,14.2,21.78,0.748,86.41,road fit agrees with the global calibration; frame only partly measurable (width)
+33-XXIII-m,26,single,cell,n/a (full cell),height,C,488,431,15.3,57.37,0.335,86.28,road fit scattered; modern road density likely confused it; frame only partly measurable (height)
+33-XXIII-n,27,single,cell,n/a (full cell),both,B,231,170,22.5,86.42,0.0,86.42,road fit scattered; modern road density likely confused it
+33-XXIII-o,28,single,cell,n/a (full cell),both,B,177,189,33.4,86.32,0.0,86.32,road fit scattered; modern road density likely confused it
+33-XXIII-p,29,single,cell,n/a (full cell),both,A,21,89,34.6,86.31,0.0,86.31,road fit agrees with the global calibration
+33-XXIII-q,30,single,cell,n/a (full cell),both,A,64,22,15.5,86.49,0.0,86.49,road fit agrees with the global calibration
+33-XXIV-a,31,single,cell,n/a (full cell),both,A,134,45,28.1,86.53,0.0,86.53,road fit agrees with the global calibration
+33-XXIV-b,32,single,cell,n/a (full cell),both,A,128,89,10.6,86.43,0.0,86.43,road fit agrees with the global calibration
+33-XXIV-c,33,single,cell,n/a (full cell),both,B,319,1834,21.4,86.39,0.0,86.39,road fit scattered; modern road density likely confused it
+33-XXIV-d,34,single,cell,n/a (full cell),both,B,210,205,27.0,61.96,0.283,86.42,road fit scattered; modern road density likely confused it
+33-XXIV-e,35,single,cell,n/a (full cell),both,B,404,460,57.9,84.82,0.019,86.42,road fit scattered; modern road density likely confused it
+33-XXIV-f,36,single,cell,n/a (full cell),both,B,549,536,13.0,85.27,0.014,86.44,road fit scattered; modern road density likely confused it
+33-XXIV-g,37,single,cell,n/a (full cell),both,B,444,438,22.5,65.97,0.237,86.43,road fit scattered; modern road density likely confused it
+33-XXIV-h,38,single,cell,n/a (full cell),both,B,,,6.8,35.84,0.584,86.25,not enough road ink to check independently
+33-XXIV-i,39,single,cell,n/a (full cell),both,A,21,31,13.0,52.19,0.398,86.64,road fit agrees with the global calibration
+33-XXIV-k,40,single,cell,n/a (full cell),height,B,21,22,16.8,85.13,0.015,86.4,road fit agrees with the global calibration; frame only partly measurable (height)
+33-XXIV-l,41,single,cell,n/a (full cell),both,A,21,0,6.0,84.63,0.022,86.56,road fit agrees with the global calibration
+33-XXIV-m,42,single,cell,n/a (full cell),height,C,316,575,5.1,86.52,0.0,86.52,road fit scattered; modern road density likely confused it; frame only partly measurable (height)
+33-XXIV-n,43,single,cell,n/a (full cell),both,B,762,605,0.0,79.81,0.075,86.31,road fit scattered; modern road density likely confused it
+33-XXIV-o,44,single,cell,n/a (full cell),height,C,401,961,17.1,72.28,0.165,86.51,road fit scattered; modern road density likely confused it; frame only partly measurable (height)
+33-XXIV-p,45,single,cell,n/a (full cell),both,A,73,45,24.8,86.53,0.0,86.53,road fit agrees with the global calibration
+33-XXIV-q,46,single,cell,n/a (full cell),height,C,510,529,7.0,85.08,0.015,86.33,road fit scattered; modern road density likely confused it; frame only partly measurable (height)
+33-XXV-ae,47,composite,top,shoreline,both,B,,,42.7,46.55,0.558,105.22,"not enough road ink to check independently; composite sheet, extends 2037 m beyond its cell; anchor confirmed by shoreline (2037 m margin over the other edge)"
+33-XXV-b,48,single,cell,n/a (full cell),both,B,560,572,5.1,86.06,0.005,86.46,road fit scattered; modern road density likely confused it
+33-XXV-c,49,single,cell,n/a (full cell),both,A,43,22,13.1,86.0,0.005,86.42,road fit agrees with the global calibration
+33-XXV-d,50,single,cell,n/a (full cell),width,B,21,0,15.3,76.4,0.116,86.39,road fit agrees with the global calibration; frame only partly measurable (width)
+33-XXV-f,51,single,cell,n/a (full cell),both,B,,,24.2,36.57,0.577,86.55,not enough road ink to check independently
+33-XXV-g,52,single,cell,n/a (full cell),both,A,164,143,0.0,49.35,0.428,86.34,road fit agrees with the global calibration
+33-XXV-h,53,single,cell,n/a (full cell),both,B,,,21.3,86.26,0.0,86.26,not enough road ink to check independently
+33-XXV-m,54,single,cell,n/a (full cell),both,B,122,1536,23.9,25.68,0.703,86.56,road fit scattered; modern road density likely confused it
+33-XXV-q,55,single,cell,n/a (full cell),both,B,21,1524,8.7,13.63,0.842,86.43,road fit scattered; modern road density likely confused it
+33-XXVI-d,56,irregular,top,shoreline,both,B,,,25.4,20.37,0.781,93.1,"not enough road ink to check independently; irregular sheet, extends 734 m beyond its cell; anchor confirmed by shoreline (734 m margin over the other edge)"
+34-XXIII-ie,57,composite,bottom,roads,both,B,492,1665,9.3,73.47,0.234,95.88,"road fit scattered; modern road density likely confused it; composite sheet, extends 1046 m beyond its cell; anchor confirmed by roads (2778 m margin over the other edge)"
+34-XXIII-k,58,single,cell,n/a (full cell),height,C,1233,1157,22.0,54.56,0.369,86.44,road fit scattered; modern road density likely confused it; frame only partly measurable (height)
+34-XXIII-l,59,single,cell,n/a (full cell),both,B,,,18.0,15.25,0.823,86.31,not enough road ink to check independently
+34-XXIII-n,60,single,cell,n/a (full cell),both,B,,,5.1,86.49,0.0,86.49,not enough road ink to check independently
+34-XXIII-o,61,single,cell,n/a (full cell),both,B,,,0.0,86.34,0.0,86.34,not enough road ink to check independently
+34-XXIII-p,62,single,cell,n/a (full cell),both,B,332,341,8.9,86.61,0.0,86.61,road fit scattered; modern road density likely confused it
+34-XXIV-a,63,single,cell,n/a (full cell),both,A,149,89,13.1,84.49,0.024,86.53,road fit agrees with the global calibration
+34-XXIV-b,64,single,cell,n/a (full cell),both,A,21,0,3.7,53.33,0.382,86.35,road fit agrees with the global calibration
+34-XXIV-cd,65,composite,left,shoreline,both,B,,,29.5,91.56,0.285,128.12,"not enough road ink to check independently; composite sheet, extends 4470 m beyond its cell; anchor confirmed by shoreline (4470 m margin over the other edge)"
+34-XXIV-e,66,single,cell,n/a (full cell),both,B,234,219,22.0,86.59,0.0,86.59,road fit scattered; modern road density likely confused it
+34-XXIV-f,67,single,cell,n/a (full cell),height,C,692,416,9.7,85.26,0.012,86.3,road fit scattered; modern road density likely confused it; frame only partly measurable (height)
+34-XXIV-g,68,single,cell,n/a (full cell),both,B,468,445,0.0,86.32,0.0,86.32,road fit scattered; modern road density likely confused it
+34-XXIV-h,69,single,cell,n/a (full cell),both,B,326,252,16.8,56.02,0.351,86.31,road fit scattered; modern road density likely confused it
+34-XXIV-i,70,single,cell,n/a (full cell),both,A,21,67,3.9,86.25,0.0,86.25,road fit agrees with the global calibration
+34-XXIV-k,71,single,cell,n/a (full cell),both,B,581,1037,9.1,84.65,0.019,86.29,road fit scattered; modern road density likely confused it
+34-XXIV-l,72,single,cell,n/a (full cell),both,B,723,437,21.2,86.5,0.0,86.5,road fit scattered; modern road density likely confused it
+34-XXIV-m,73,single,cell,n/a (full cell),both,A,43,22,3.7,86.37,0.0,86.37,road fit agrees with the global calibration
+34-XXIV-n,74,single,cell,n/a (full cell),both,A,834,90,16.9,85.48,0.013,86.6,road fit agrees with the global calibration
+34-XXIV-o,75,single,cell,n/a (full cell),both,B,422,337,21.7,79.69,0.079,86.51,road fit scattered; modern road density likely confused it
+34-XXIV-p,76,single,cell,n/a (full cell),both,A,250,145,13.8,86.73,0.0,86.73,road fit agrees with the global calibration
+34-XXIV-q,77,single,cell,n/a (full cell),both,B,234,184,17.6,86.93,0.0,86.93,road fit scattered; modern road density likely confused it
+34-XXV-a,78,single,cell,n/a (full cell),both,A,21,0,9.5,86.44,0.0,86.44,road fit agrees with the global calibration
+34-XXV-b,79,single,cell,n/a (full cell),both,A,21,0,0.0,86.5,0.0,86.5,road fit agrees with the global calibration
+34-XXV-c,80,single,cell,n/a (full cell),width,C,359,371,6.7,85.16,0.012,86.21,road fit scattered; modern road density likely confused it; frame only partly measurable (width)
+34-XXV-d,81,single,cell,n/a (full cell),height,B,21,0,0.0,82.47,0.044,86.3,road fit agrees with the global calibration; frame only partly measurable (height)
+34-XXV-e,82,single,cell,n/a (full cell),both,B,680,1391,8.0,84.83,0.018,86.36,road fit scattered; modern road density likely confused it
+34-XXV-f,83,single,cell,n/a (full cell),both,A,21,0,19.0,83.15,0.035,86.19,road fit agrees with the global calibration
+34-XXV-g,84,single,cell,n/a (full cell),both,A,21,0,18.3,81.44,0.058,86.45,road fit agrees with the global calibration
+34-XXV-h,85,single,cell,n/a (full cell),both,A,21,0,14.5,86.51,0.0,86.51,road fit agrees with the global calibration
+34-XXV-i,86,single,cell,n/a (full cell),both,B,693,649,43.8,58.32,0.324,86.29,road fit scattered; modern road density likely confused it
+34-XXV-k,87,single,cell,n/a (full cell),both,B,613,1359,5.4,75.92,0.12,86.31,road fit scattered; modern road density likely confused it
+34-XXV-l,88,single,cell,n/a (full cell),both,B,553,1345,3.9,86.47,0.0,86.47,road fit scattered; modern road density likely confused it
+34-XXV-m,89,single,cell,n/a (full cell),height,C,366,365,26.2,86.55,0.0,86.55,road fit scattered; modern road density likely confused it; frame only partly measurable (height)
+34-XXV-n,90,single,cell,n/a (full cell),both,A,103,120,0.0,63.33,0.268,86.47,road fit agrees with the global calibration
+34-XXV-o,91,single,cell,n/a (full cell),both,B,,,9.5,86.38,0.0,86.38,not enough road ink to check independently
+34-XXV-p,92,single,cell,n/a (full cell),both,B,218,175,1.7,86.28,0.0,86.28,road fit scattered; modern road density likely confused it
+34-XXV-q,93,single,cell,n/a (full cell),width,C,595,537,17.2,86.16,0.0,86.16,road fit scattered; modern road density likely confused it; frame only partly measurable (width)
+34-XXVI-a,94,single,cell,n/a (full cell),both,B,122,769,25.8,24.01,0.722,86.29,road fit scattered; modern road density likely confused it
+34-XXVI-b,95,single,cell,n/a (full cell),both,B,,,8.8,86.44,0.0,86.44,not enough road ink to check independently
+34-XXVI-c,96,single,cell,n/a (full cell),none,B,21,22,3.9,73.63,0.147,86.3,road fit agrees with the global calibration; frame only partly measurable (none)
+34-XXVI-d,97,single,cell,n/a (full cell),both,A,21,0,0.0,84.92,0.015,86.25,road fit agrees with the global calibration
+34-XXVI-e,98,single,cell,n/a (full cell),both,B,,,6.1,86.43,0.0,86.43,not enough road ink to check independently
+34-XXVI-f,99,single,cell,n/a (full cell),both,B,,,7.2,86.3,0.0,86.3,not enough road ink to check independently
+34-XXVI-g,100,single,cell,n/a (full cell),both,B,340,184,0.0,50.92,0.413,86.81,road fit scattered; modern road density likely confused it
+34-XXVI-h,101,single,cell,n/a (full cell),both,A,21,0,8.0,72.29,0.162,86.28,road fit agrees with the global calibration
+34-XXVI-k,102,single,cell,n/a (full cell),height,C,21,267,8.0,22.34,0.748,88.59,road fit scattered; modern road density likely confused it; frame only partly measurable (height)
+34-XXVI-l,103,single,cell,n/a (full cell),both,B,1047,930,3.9,66.94,0.227,86.65,road fit scattered; modern road density likely confused it
+34-XXVI-m,104,single,cell,n/a (full cell),both,A,21,0,0.0,80.9,0.065,86.52,road fit agrees with the global calibration
+34-XXVI-on,105,composite,right,shoreline,both,B,1302,1507,16.8,90.2,0.046,94.53,"road fit scattered; modern road density likely confused it; composite sheet, extends 886 m beyond its cell; anchor confirmed by shoreline (886 m margin over the other edge)"
+34-XXVI-p,106,single,cell,n/a (full cell),both,B,1059,1060,8.9,82.92,0.038,86.2,road fit scattered; modern road density likely confused it
+34-XXVI-q,107,single,cell,n/a (full cell),both,B,808,882,0.8,86.37,0.0,86.37,road fit scattered; modern road density likely confused it
+34-XXVII-b,108,single,cell,n/a (full cell),both,B,,,8.7,19.19,0.777,86.2,not enough road ink to check independently
+34-XXVII-c,109,single,cell,n/a (full cell),both,B,,,21.3,46.87,0.456,86.16,not enough road ink to check independently
+34-XXVII-d,110,single,cell,n/a (full cell),height,C,,,22.4,48.6,0.437,86.26,not enough road ink to check independently; frame only partly measurable (height)
+34-XXVII-f,111,single,cell,n/a (full cell),both,B,,,10.3,27.94,0.676,86.24,not enough road ink to check independently
+34-XXVII-g,112,irregular,top,shoreline,both,B,,,27.3,22.86,0.747,90.29,"not enough road ink to check independently; irregular sheet, extends 452 m beyond its cell; anchor confirmed by shoreline (452 m margin over the other edge)"
+34-XXVII-h,113,single,cell,n/a (full cell),both,B,,,0.0,19.06,0.779,86.39,not enough road ink to check independently
+34-XXVII-m,114,single,cell,n/a (full cell),both,B,52,936,24.9,19.45,0.775,86.48,road fit scattered; modern road density likely confused it
+35-XXIV-i,115,single,cell,n/a (full cell),both,B,,,27.8,28.13,0.675,86.49,not enough road ink to check independently
+35-XXIV-n,116,single,cell,n/a (full cell),both,A,170,141,8.0,86.81,0.006,87.33,road fit agrees with the global calibration
+35-XXV-a,117,single,cell,n/a (full cell),both,A,21,0,33.7,19.73,0.772,86.38,road fit agrees with the global calibration
+35-XXV-e,118,single,cell,n/a (full cell),both,A,122,80,8.0,37.44,0.566,86.27,road fit agrees with the global calibration
+35-XXV-i,119,single,cell,n/a (full cell),both,B,228,252,13.7,68.98,0.202,86.39,road fit scattered; modern road density likely confused it
+35-XXV-n,120,single,cell,n/a (full cell),both,A,43,0,17.7,86.17,0.005,86.6,road fit agrees with the global calibration
+35-XXV-o,121,single,cell,n/a (full cell),both,B,21,996,3.3,9.83,0.886,86.6,road fit scattered; modern road density likely confused it
+35-XXVI-a,122,single,cell,n/a (full cell),both,B,850,2394,19.1,28.3,0.673,86.41,road fit scattered; modern road density likely confused it
+35-XXVI-b,123,single,cell,n/a (full cell),both,B,,,21.2,72.41,0.161,86.28,not enough road ink to check independently
+35-XXVI-e,124,single,cell,n/a (full cell),width,C,,,9.3,20.52,0.763,86.49,not enough road ink to check independently; frame only partly measurable (width)
+35-XXVI-f,125,single,cell,n/a (full cell),both,A,61,67,0.9,26.77,0.691,86.57,road fit agrees with the global calibration
+35-XXVI-g,126,single,cell,n/a (full cell),both,B,,,29.0,21.67,0.75,86.5,not enough road ink to check independently
+35-XXVI-h,127,single,cell,n/a (full cell),both,A,21,0,4.1,86.44,0.0,86.44,road fit agrees with the global calibration
+35-XXVI-i,128,single,cell,n/a (full cell),both,B,390,1153,13.9,80.16,0.074,86.6,road fit scattered; modern road density likely confused it
+35-XXVI-k,129,single,cell,n/a (full cell),both,B,,,25.5,30.33,0.651,86.85,not enough road ink to check independently
+35-XXVI-l,130,single,cell,n/a (full cell),both,A,21,22,14.5,34.42,0.601,86.32,road fit agrees with the global calibration
+35-XXVI-m,131,single,cell,n/a (full cell),both,A,30,28,21.5,47.44,0.45,86.27,road fit agrees with the global calibration
+35-XXVI-n,132,single,cell,n/a (full cell),both,A,21,22,21.1,63.76,0.264,86.61,road fit agrees with the global calibration
+35-XXVI-o,133,single,cell,n/a (full cell),both,A,21,31,19.7,50.35,0.417,86.32,road fit agrees with the global calibration
+35-XXVI-p,134,single,cell,n/a (full cell),both,B,259,236,22.1,83.0,0.038,86.29,road fit scattered; modern road density likely confused it
+35-XXVI-q,135,single,cell,n/a (full cell),both,B,255,282,8.0,84.37,0.022,86.29,road fit scattered; modern road density likely confused it
+35-XXVII-a,136,single,cell,n/a (full cell),width,B,21,22,5.4,41.71,0.516,86.17,road fit agrees with the global calibration; frame only partly measurable (width)
+35-XXVII-b,137,single,cell,n/a (full cell),width,B,21,70,0.0,34.56,0.598,86.05,road fit agrees with the global calibration; frame only partly measurable (width)
+35-XXVII-c,138,single,cell,n/a (full cell),both,A,21,34,13.9,58.93,0.319,86.48,road fit agrees with the global calibration
+35-XXVII-d,139,single,cell,n/a (full cell),both,B,553,498,17.8,86.28,0.0,86.28,road fit scattered; modern road density likely confused it
+35-XXVII-e,140,single,cell,n/a (full cell),both,B,595,1672,13.3,33.82,0.608,86.21,road fit scattered; modern road density likely confused it
+35-XXVII-f,141,single,cell,n/a (full cell),both,B,,,25.6,43.3,0.498,86.32,not enough road ink to check independently
+35-XXVII-g,142,single,cell,n/a (full cell),both,B,,,17.3,33.52,0.613,86.62,not enough road ink to check independently
+35-XXVII-h,143,single,cell,n/a (full cell),both,B,610,926,22.7,81.78,0.054,86.48,road fit scattered; modern road density likely confused it
+35-XXVII-i,144,single,cell,n/a (full cell),both,B,429,381,25.8,23.17,0.732,86.53,road fit scattered; modern road density likely confused it
+35-XXVII-ko,145,composite,top,shoreline,both,B,383,1514,69.6,67.95,0.343,103.39,"road fit scattered; modern road density likely confused it; composite sheet, extends 1864 m beyond its cell; anchor confirmed by shoreline (1864 m margin over the other edge)"
+35-XXVII-l,146,single,cell,n/a (full cell),both,B,702,751,27.2,74.65,0.136,86.4,road fit scattered; modern road density likely confused it
+35-XXVII-m,147,single,cell,n/a (full cell),both,A,21,45,28.0,48.82,0.435,86.44,road fit agrees with the global calibration
+35-XXVII-p,148,single,cell,n/a (full cell),both,A,143,97,18.7,41.34,0.521,86.29,road fit agrees with the global calibration
+35-XXVII-q,149,single,cell,n/a (full cell),both,A,116,31,13.3,65.26,0.245,86.43,road fit agrees with the global calibration
+35-XXVIII-d,150,single,cell,n/a (full cell),both,A,30,22,14.3,20.21,0.766,86.19,road fit agrees with the global calibration
+36-XXVI-ie,151,composite,bottom,roads,both,B,,,36.6,94.88,0.0,94.88,"not enough road ink to check independently; composite sheet, extends 917 m beyond its cell; anchor confirmed by roads (3671 m margin over the other edge)"
+36-XXVI-k,152,single,cell,n/a (full cell),both,A,167,123,17.4,56.32,0.35,86.6,road fit agrees with the global calibration
+36-XXVI-l,153,single,cell,n/a (full cell),both,B,,,9.0,51.75,0.401,86.44,not enough road ink to check independently
+36-XXVI-m,154,single,cell,n/a (full cell),both,B,,,4.1,24.1,0.722,86.63,not enough road ink to check independently
+36-XXVI-n,155,single,cell,n/a (full cell),both,B,661,1103,18.4,86.76,0.0,86.76,road fit scattered; modern road density likely confused it
+36-XXVI-o,156,single,cell,n/a (full cell),both,B,503,1076,3.8,59.23,0.313,86.23,road fit scattered; modern road density likely confused it
+36-XXVI-p,157,single,cell,n/a (full cell),both,B,675,678,27.8,72.07,0.166,86.38,road fit scattered; modern road density likely confused it
+36-XXVI-q,158,single,cell,n/a (full cell),both,B,296,335,0.0,19.2,0.778,86.37,road fit scattered; modern road density likely confused it
+36-XXVII-a,159,single,cell,n/a (full cell),both,B,378,1158,6.6,86.47,0.0,86.47,road fit scattered; modern road density likely confused it
+36-XXVII-b,160,single,cell,n/a (full cell),both,B,256,1693,22.4,58.48,0.323,86.34,road fit scattered; modern road density likely confused it
+36-XXVII-c,161,single,cell,n/a (full cell),both,B,,,22.3,41.48,0.519,86.31,not enough road ink to check independently
+36-XXVII-e,162,single,cell,n/a (full cell),both,B,,,18.0,86.43,0.0,86.43,not enough road ink to check independently
+36-XXVII-fg,163,composite,left,roads,both,B,,,47.5,98.94,0.0,98.94,"not enough road ink to check independently; composite sheet, extends 1375 m beyond its cell; anchor confirmed by roads (1840 m margin over the other edge)"
+36-XXVII-i,164,single,cell,n/a (full cell),both,B,,,16.1,79.16,0.083,86.34,not enough road ink to check independently
+36-XXVII-k,165,single,cell,n/a (full cell),both,B,,,23.7,32.57,0.623,86.45,not enough road ink to check independently
+36-XXVII-n,166,single,cell,n/a (full cell),both,B,295,1500,3.8,86.18,0.0,86.18,road fit scattered; modern road density likely confused it
+36-XXVII-o,167,single,cell,n/a (full cell),both,A,128,135,34.7,86.27,0.0,86.27,road fit agrees with the global calibration
+36-XXVII-p,168,single,cell,n/a (full cell),both,A,128,120,13.0,33.86,0.608,86.33,road fit agrees with the global calibration
+36-XXVIII-a,169,single,cell,n/a (full cell),both,B,,,0.0,86.48,0.0,86.48,not enough road ink to check independently
+36-XXVIII-bf,170,composite,top,shoreline,both,B,,,18.4,94.88,0.097,105.12,"not enough road ink to check independently; composite sheet, extends 2054 m beyond its cell; anchor confirmed by shoreline (2054 m margin over the other edge)"
+36-XXVIII-c,171,single,cell,n/a (full cell),both,B,347,1706,9.7,85.87,0.007,86.49,road fit scattered; modern road density likely confused it
+36-XXVIII-dh,172,composite,top,roads,both,B,151,1613,24.2,95.15,0.0,95.15,"road fit scattered; modern road density likely confused it; composite sheet, extends 942 m beyond its cell; anchor confirmed by roads (4493 m margin over the other edge)"
+36-XXVIII-e,173,single,cell,n/a (full cell),both,B,612,834,0.0,28.88,0.666,86.41,road fit scattered; modern road density likely confused it
+36-XXVIII-g,174,single,cell,n/a (full cell),both,B,,,9.0,19.67,0.773,86.55,not enough road ink to check independently
+37-XXVI-in,175,composite,top,shoreline,height,C,213,815,65.8,18.02,0.817,98.32,"road fit scattered; modern road density likely confused it; frame only partly measurable (height); composite sheet, extends 1316 m beyond its cell; anchor confirmed by shoreline (1316 m margin over the other edge)"

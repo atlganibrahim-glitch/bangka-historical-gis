@@ -25,7 +25,26 @@ GEOREF_GRID/
 GEOREF_FINAL/
 GEOREF_FINAL_STANDARD_164/
 GEOREF_FINAL_COMPOSITE_12/
+GEOREF_V3/
+GEOREF_V3_1/
 CORRECTED_MAPS/
+new_crop_maps.zip
+new_crops/
+
+# Large regenerable caches (see v3/ scripts to rebuild)
+v3/osm_roads.json
+
+# Local-machine QGIS convenience files - the .vrt files bake in absolute
+# paths, so they only work on this checkout; the .geojson layers are
+# portable and are tracked.
+qgis/*.vrt
+
+# Personal / private notes, not part of the published dataset
+EMAIL_DRAFT.md
+QGIS_KONTROL.md
+
+# Leftover git-recovery backup directory, not repo content
+.git-backup/
 
 
 # Raster outputs (global rule to prevent any large TIF from leaking into repo)

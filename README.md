@@ -7,6 +7,21 @@
 
 📦 **Full ~6 GB dataset (GeoTIFFs + raw/cropped scans):** [huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps](https://huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps)
 
+> **v3.1 (August 2026) supersedes the published v2 dataset.** The sheets have been
+> rebuilt from neatline-accurate crops, placed by the printed map frame rather
+> than the edge of the scan, with every irregular sheet's anchoring verified
+> against the modern shoreline. See [`V3_REPORT.md`](V3_REPORT.md) for what was
+> wrong with v2, what changed, and the measured accuracy.
+> New pipeline: [`v3/`](v3/) · outputs: `GEOREF_V3_1/` (recommended) and
+> `GEOREF_V3/` · metadata: `bangka_dataset_v3_1.csv` / `bangka_dataset_v3.csv`.
+> v3.1 adds an inland offset (+200.4 m E / −66.8 m N) measured against the OSM
+> road network; v3.0 is the purely graticule-derived grid.
+>
+> The v2 scripts below (`map_crop.py`, `automated_georef.py`, …) are kept for
+> provenance only. Note that `automated_georef.py` never reproduced the
+> published v2 rasters: its calibration constants differ from the ones baked
+> into the data by 1.2 km in latitude.
+
 ## Overview / Proje Hakkında
 
 This repository contains the metadata, calibration pipeline, Python GIS automation
