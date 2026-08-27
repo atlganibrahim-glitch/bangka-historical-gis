@@ -294,12 +294,16 @@ python v3/verify_v3.py         # geometric checks
 python v3/verify_v31.py        # did the v3.1 correction help?
 python v3/fit_singles.py       # absolute accuracy vs OSM coastline
 python v3/compare_v2_v3.py     # v2 vs v3 shoreline residuals
-python v3/mosaic_preview.py out.png v3
+python v3/fit_irregular_roads.py  # second opinion on the 4 anchors the coast can't decide
+python v3/sheet_quality.py     # per-sheet quality  -> bangka_sheet_quality.csv
+python v3/make_figures.py      # every figure in this report and the README -> figures/
 ```
 
 Requires `numpy pandas pillow opencv-python rasterio`. OSM extracts are cached
 in `v3/osm_coastline.json` (`natural=coastline`) and `v3/osm_roads.json`
-(`highway=*`), both Overpass, Bangka bbox.
+(`highway=*`), both Overpass, Bangka bbox. `make_figures.py` additionally
+fetches a few dozen OpenStreetMap raster tiles for the overlay figure, cached
+in `v3/tilecache/` (© OpenStreetMap contributors, ODbL).
 
 Source sheets: Topografische Dienst in Nederlandsch-Indië, *Res. Bangka en
 Onderhoorigheden*, 1:25,000, 1930–1936. Held by Leiden University Libraries,

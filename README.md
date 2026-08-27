@@ -30,6 +30,30 @@ archive on Hugging Face. Until that happens, the Hugging Face link above still
 serves v2. The pipeline, metadata, and quality tables for v3.1 are in this
 repository already.
 
+![The 176 sheets over OpenStreetMap](figures/osm_overlay.png)
+
+*All 176 sheets in their v3.1 positions, over OpenStreetMap. Muntok,
+Belinyu, Sungailiat, Pangkalpinang, Koba and Toboali all fall where the
+modern basemap puts them, and the drawn coastline follows the real one.
+Basemap © OpenStreetMap contributors (ODbL). This figure is a QGIS export and
+ships with a world file (`figures/osm_overlay.pgw`), so it can be loaded back
+into a GIS as a georeferenced overview.*
+
+### What was wrong, in one picture
+
+![v2 vs v3 at a composite seam](figures/seam_v2_v3.png)
+
+*The same seam in v2 (left) and v3 (right). Red marks where two sheets paint
+the same ground. In v2 the composite sheet `35-XXVII-ko` overhangs its
+neighbour along the entire 9.3 km boundary, because its width came out
+5.03′–5.11′ instead of 5.00′. In v3 that band is gone.*
+
+![A sheet printed past its cell](figures/irregular_sheet.png)
+
+*`33-XXVI-d` has an ordinary single-letter code, but its printed neatline
+(blue) is 7.2 % taller than one 5′ cell (red). v2 squeezed the whole sheet
+into the red box; v3 places it at its true size.*
+
 ## Quick Start
 
 ```python
@@ -123,6 +147,8 @@ bangka-historical-gis/
 │   ├── sheet_to_wgs84.py          #   pixel -> lon/lat helper for downstream pipelines
 │   ├── sheet_quality.py           #   builds bangka_sheet_quality.csv
 │   └── ...                        #   verification / accuracy-measurement scripts
+│
+├── figures/                       # Figures used above — regenerate with v3/make_figures.py
 │
 ├── qgis/                          # Portable QGIS layers (vector; .vrt rasters are local-only)
 │   ├── sheet_index_v3.geojson     #   every sheet's printed-frame footprint + attributes

@@ -60,3 +60,6 @@ QGIS_KONTROL.md
 # Office temporary / lock files
 ~$*
 *.~*
+
+# Figure tile cache (regenerable; fetched by v3/make_figures.py)
+v3/tilecache/
