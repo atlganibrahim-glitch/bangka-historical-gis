@@ -14,8 +14,8 @@ analysis of historical land use.
 
 | | version | rasters | metadata | GeoTIFFs on Hugging Face |
 |---|---|---|---|---|
-| **current** | v3.1 | `GEOREF_V3_1/` (local, not yet tracked in git — see below) | `bangka_dataset_v3_1.csv` | **not yet uploaded** |
-| superseded | v2 | `GEOREF_FINAL_STANDARD_164/`, `GEOREF_FINAL_COMPOSITE_12/` | `bangka_dataset_v2.csv` | [uploaded ✅](https://huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps) |
+| **current** | v3.1 | `GEOREF_V3_1/` (local, not tracked in git — see below) | `bangka_dataset_v3_1.csv` | [uploaded ✅](https://huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps) |
+| superseded | v2 | `GEOREF_FINAL_STANDARD_164/`, `GEOREF_FINAL_COMPOSITE_12/` | `bangka_dataset_v2.csv` | still present, for provenance |
 
 **v3.1 supersedes v2.** v2's composite sheets overhung their neighbours by up
 to 278 m along a 9.3 km seam (21 overlapping sheet pairs) and two ordinary
@@ -24,11 +24,9 @@ sheet from the printed neatline instead of the scan edge; v3.1 adds a small,
 measured inland correction. Full account of what was wrong and what changed:
 **[`V3_REPORT.md`](V3_REPORT.md)**.
 
-**Open item:** the v3.1 GeoTIFFs (`GEOREF_V3_1/`, ~870 MB) are generated
-locally and verified, but have not yet been uploaded to replace the v2
-archive on Hugging Face. Until that happens, the Hugging Face link above still
-serves v2. The pipeline, metadata, and quality tables for v3.1 are in this
-repository already.
+Both versions are on Hugging Face — `GEOREF_V3_1/` is the one to use; v2 is
+kept alongside it rather than overwritten, so anything that already cites v2
+still resolves.
 
 ![The 176 sheets over OpenStreetMap](figures/osm_overlay.png)
 
@@ -171,22 +169,23 @@ bangka-historical-gis/
 Due to GitHub size limits, the georeferenced GeoTIFF archives and raw scans
 are not tracked in this Git repository.
 
-- **v2 (currently on Hugging Face):**
-  **📦 https://huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps**
+**📦 https://huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps**
+— both v3.1 (current) and v2 (superseded) are hosted there, side by side.
 
-  ```python
-  from huggingface_hub import snapshot_download
-  snapshot_download(
-      repo_id="ibrahimatlgn/bangka-1930s-topographic-maps",
-      repo_type="dataset",
-      local_dir="bangka_data",
-  )
-  ```
+```python
+from huggingface_hub import snapshot_download
+snapshot_download(
+    repo_id="ibrahimatlgn/bangka-1930s-topographic-maps",
+    repo_type="dataset",
+    local_dir="bangka_data",
+    allow_patterns=["GEOREF_V3_1/*", "bangka_dataset_v3_1.csv",
+                    "bangka_sheet_quality.csv"],   # v3.1 only; omit for everything
+)
+```
 
-- **v3.1 (current, not yet uploaded):** reproduce locally with `v3/georeference.py`
-  (needs the neatline-accurate crops — ask the repository owner if you need
-  them and don't already have `new_crop_maps.zip`), or check back here /
-  on Hugging Face for the re-upload.
+Also on Hugging Face: `new_crops/` (the neatline-accurate source crops the v3
+pipeline reads) — needed only to *reproduce* the georeferencing, not to use
+the finished rasters.
 
 ## Using the Data (Quick Start)
 
@@ -237,8 +236,6 @@ recommended; see the notice at the top of `METHODOLOGY_REVISED_EN.md`.
 
 ## Known Limitations
 
-- The v3.1 GeoTIFFs are not yet re-uploaded to Hugging Face (see Status
-  above).
 - 4 of the 14 non-standard sheets' anchors were confirmed via the OSM road
   network rather than the (unavailable) shoreline; see `V3_REPORT.md §2` for
   which ones and the margin of evidence.
