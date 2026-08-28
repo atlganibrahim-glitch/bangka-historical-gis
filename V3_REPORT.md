@@ -9,7 +9,7 @@ Scripts are in [`v3/`](v3/). Two output sets are published:
 | set | rasters | metadata | what it is |
 |---|---|---|---|
 | **v3.1** (recommended) | `GEOREF_V3_1/` | `bangka_dataset_v3_1.csv` | v3.0 plus the inland road-network offset (§5) |
-| v3.0 | `GEOREF_V3/` | `bangka_dataset_v3.csv` | graticule-exact, no empirical shift |
+| v3.0 | `GEOREF_V3/` | `v3/bangka_dataset_v3.csv` | graticule-exact, no empirical shift |
 
 They differ by a pure translation of +200.4 m E / −66.8 m N, identical on all
 176 sheets.
@@ -202,7 +202,7 @@ their frames should be checked before publication:
 - `34-XXVII-g` — frame 4331 × 4513 px, +4.2 % taller than one cell (+452 m)
 
 **Twenty sheets have one frame edge too faint to measure** (`frame_measured`
-column in `bangka_dataset_v3.csv`); those fall back to the crop edge, worth
+column in `v3/bangka_dataset_v3.csv`); those fall back to the crop edge, worth
 about 10 px each.
 
 **Systematic refinement — applied in v3.1, see §5.**
@@ -274,7 +274,7 @@ The systematic component is essentially gone.
 | 100–300 m features | usable; residual scatter is the limit, not bias |
 | per-pixel / single-symbol overlay | needs per-sheet control points, not a global offset |
 
-Both versions are kept: `GEOREF_V3/` + `bangka_dataset_v3.csv` (graticule-exact,
+Both versions are kept: `GEOREF_V3/` + `v3/bangka_dataset_v3.csv` (graticule-exact,
 no empirical shift) and `GEOREF_V3_1/` + `bangka_dataset_v3_1.csv` (recommended).
 Every v3.1 raster is tagged `VERSION=v3.1`, and all 176 carry exactly the same
 shift (σ = 0.00 m), so the two sets differ by a pure translation and nothing else.

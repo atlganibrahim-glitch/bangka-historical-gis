@@ -5,7 +5,9 @@ import numpy as np
 import os
 
 # --- SETTINGS ---
-csv_path = os.path.join('archive', 'bangka_dataset.csv')
+# v2-era script; run from the true repo root (main maps/ and recovered_maps/
+# stayed there). archive/ moved into legacy-v2/ alongside this script.
+csv_path = os.path.join('legacy-v2', 'archive', 'bangka_dataset.csv')
 input_dir = 'main maps'  # Raw scans live in this folder
 output_dir = 'recovered_maps'
 os.makedirs(output_dir, exist_ok=True)

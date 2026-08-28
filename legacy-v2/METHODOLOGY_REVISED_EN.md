@@ -8,7 +8,7 @@
 > to 278 m along a 9.3 km seam (21 overlapping sheet pairs total). This
 > document's claim that neatline detection was attempted and failed also no
 > longer holds — it succeeds cleanly on the 2026 crops. See
-> [`V3_REPORT.md`](V3_REPORT.md) for the corrected pipeline and current
+> [`V3_REPORT.md`](../V3_REPORT.md) for the corrected pipeline and current
 > numbers. Kept below for provenance.
 
 ---

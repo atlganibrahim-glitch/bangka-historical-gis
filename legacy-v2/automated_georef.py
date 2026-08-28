@@ -10,13 +10,17 @@ LON_OFFSET = 0.14043
 LAT_OFFSET = -0.01045
 # ==============================================================================
 
+# v2-era script; run from the true repo root (recovered_maps/ and
+# GEOREF_FINAL_STANDARD_164/ stayed there). archive/ moved into legacy-v2/
+# alongside this script. Note: these constants do NOT match the ones baked
+# into the published v2 rasters (+0.140831 / +0.000121) — see V3_REPORT.md §1d.
 INPUT_DIR = "recovered_maps"  # cropped images live here
 OUTPUT_DIR = "GEOREF_FINAL_STANDARD_164"
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
-df = pd.read_csv(os.path.join('archive', 'bangka_dataset.csv'))
+df = pd.read_csv(os.path.join('legacy-v2', 'archive', 'bangka_dataset.csv'))
 
 subgrid_map = {
     'a': (0, 0), 'b': (1, 0), 'c': (2, 0), 'd': (3, 0),

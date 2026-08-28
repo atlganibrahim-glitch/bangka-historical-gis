@@ -3,7 +3,10 @@ import os, sys
 from osgeo import gdal
 gdal.UseExceptions()
 
-FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), "GEOREF_FINAL_STANDARD_164")
+# v2-era script; moved into legacy-v2/ during the v3 reorganisation.
+# GEOREF_FINAL_STANDARD_164/ stayed at the true repo root.
+FOLDER = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                      "GEOREF_FINAL_STANDARD_164")
 
 # Check the coordinates of the first few GeoTIFFs
 files = sorted([f for f in os.listdir(FOLDER) if f.endswith('.tif')])[:5]

@@ -13,11 +13,16 @@ import pandas as pd
 from osgeo import gdal
 gdal.UseExceptions()
 
-BASE     = r'D:\İşlenecekHaritalar'
-OLD_DIR  = os.path.join(BASE, 'GEOREF_FINAL_STANDARD_164')
-CROP_DIR = os.path.join(BASE, 'recovered_maps')
-CSV_IN   = os.path.join(BASE, 'archive', 'bangka_dataset.csv')
-CSV_OUT  = os.path.join(BASE, 'bangka_dataset_v2.csv')
+# v2-era script; moved into legacy-v2/ during the v3 reorganisation.
+# GEOREF_FINAL_STANDARD_164/ and recovered_maps/ stayed at the true repo
+# root, not tracked in git either way; bangka_dataset_v2.csv and archive/
+# moved into legacy-v2/ alongside this script.
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+OLD_DIR  = os.path.join(ROOT, 'GEOREF_FINAL_STANDARD_164')
+CROP_DIR = os.path.join(ROOT, 'recovered_maps')
+CSV_IN   = os.path.join(HERE, 'archive', 'bangka_dataset.csv')
+CSV_OUT  = os.path.join(HERE, 'bangka_dataset_v2.csv')
 
 SCALE = 4   # downsampling factor (4x smaller)
 

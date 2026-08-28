@@ -19,9 +19,12 @@ import pandas as pd
 from osgeo import gdal
 gdal.UseExceptions()
 
-BASE     = os.path.dirname(os.path.abspath(__file__))
-OLD_DIR  = os.path.join(BASE, "GEOREF_FINAL_STANDARD_164")
-CSV_PATH = os.path.join(BASE, "archive", "bangka_dataset.csv")
+# v2-era script; moved into legacy-v2/ during the v3 reorganisation.
+# GEOREF_FINAL_STANDARD_164/ stayed at the true repo root; archive/ moved
+# into legacy-v2/ alongside this script.
+_HERE = os.path.dirname(os.path.abspath(__file__))
+OLD_DIR  = os.path.join(os.path.dirname(_HERE), "GEOREF_FINAL_STANDARD_164")
+CSV_PATH = os.path.join(_HERE, "archive", "bangka_dataset.csv")
 
 # ============================================================
 # HERE: the sheet_id and file path you georeferenced manually

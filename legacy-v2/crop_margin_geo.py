@@ -22,11 +22,15 @@ from osgeo import gdal, osr
 
 gdal.UseExceptions()
 
-BASE       = os.path.dirname(os.path.abspath(__file__))
-OLD_DIR    = os.path.join(BASE, "GEOREF_FINAL_STANDARD_164")
-CROP_DIR   = os.path.join(BASE, "recovered_maps")
-OUTPUT_DIR = os.path.join(BASE, "GEOREF_FINAL_STANDARD_164")
-CSV_PATH   = os.path.join(BASE, "bangka_dataset_v2.csv")
+# v2-era script; moved into legacy-v2/ during the v3 reorganisation.
+# GEOREF_FINAL_STANDARD_164/ and recovered_maps/ stayed at the true repo
+# root; bangka_dataset_v2.csv moved into legacy-v2/ alongside this script.
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+OLD_DIR    = os.path.join(ROOT, "GEOREF_FINAL_STANDARD_164")
+CROP_DIR   = os.path.join(ROOT, "recovered_maps")
+OUTPUT_DIR = os.path.join(ROOT, "GEOREF_FINAL_STANDARD_164")
+CSV_PATH   = os.path.join(HERE, "bangka_dataset_v2.csv")
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)

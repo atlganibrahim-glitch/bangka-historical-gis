@@ -1,7 +1,7 @@
 > **Superseded (August 2026).** This report describes the v2 pipeline and its
 > claimed accuracy. Several of those claims did not hold up — most visibly,
 > 21 sheet pairs actually overlapped along a full seam, which is what this
-> report's "zero overlaps" claim missed. See [`V3_REPORT.md`](V3_REPORT.md)
+> report's "zero overlaps" claim missed. See [`V3_REPORT.md`](../V3_REPORT.md)
 > for the corrected pipeline, what was wrong here, and the current measured
 > accuracy. Kept below for provenance.
 

@@ -1,19 +1,24 @@
 # archive/ — Experimental & Superseded Scripts
 
+> This whole tree (`legacy-v2/archive/`) is nested inside
+> [`legacy-v2/`](../), the v2-era material superseded by v3 — see
+> [`../../V3_REPORT.md`](../../V3_REPORT.md) for the current pipeline.
+
 These scripts are **reference material only**. They are *not* part of the
-production georeferencing pipeline (see the scripts in the repository root and
+v2 pipeline itself (see the scripts one level up in `legacy-v2/` and
 the phase-by-phase description in [`../METHODOLOGY_REVISED_EN.md`](../METHODOLOGY_REVISED_EN.md)).
 They are kept for transparency — mainly to document how the systematic offset was
 explored and why the grid-line auto-detection approach was ultimately not used.
 
-> Paths in these files assume they are run from the **repository root**
-> (e.g. `python archive/georef_grid.py`), where `GEOREF_FINAL_STANDARD_164/`
-> lives. Some may need path adjustments to run.
+> Paths in these files assume they are run from the **true repository root**
+> (e.g. `python legacy-v2/archive/georef_grid.py`, run from the top of the
+> repo), where `GEOREF_FINAL_STANDARD_164/` lives. Some may need path
+> adjustments to run.
 
 **`bangka_dataset.csv`** also lives here: it is the **original** metadata table
 (provided as source material; original compiler undocumented), superseded by
 `../bangka_dataset_v2.csv`. It is kept as the input for the reproduction pipeline
-and for provenance. See [`../CHANGELOG.md`](../CHANGELOG.md) for what was corrected.
+and for provenance. See [`../../CHANGELOG.md`](../../CHANGELOG.md) for what was corrected.
 
 | Script | What it was | Why it's archived |
 |--------|-------------|-------------------|

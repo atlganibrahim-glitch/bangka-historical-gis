@@ -14,16 +14,20 @@ in [`V3_REPORT.md`](V3_REPORT.md); summary:
   is now backed by measurement against OSM (shoreline or road network), not
   assumed from the sub-code rule alone.
 - v3.1 adds a small measured inland correction (+200.4 m E / −66.8 m N).
-- New pipeline: [`v3/`](v3/). New metadata: `bangka_dataset_v3.csv` /
+- New pipeline: [`v3/`](v3/). New metadata: [`v3/bangka_dataset_v3.csv`](v3/bangka_dataset_v3.csv) /
   `bangka_dataset_v3_1.csv`, plus a per-sheet positional-quality table,
   `bangka_sheet_quality.csv`.
-- `bangka_dataset_v2.csv` (below) is unaffected — the v3 rebuild used the new
-  crops directly, not this CSV's margin values.
+- `legacy-v2/bangka_dataset_v2.csv` (below) is unaffected — the v3 rebuild
+  used the new crops directly, not this CSV's margin values.
+- All v2-era scripts, docs, and metadata moved into
+  [`legacy-v2/`](legacy-v2/) to keep the repository root to what's current.
 
 ## bangka_dataset_v2.csv
 Updated/corrected version of the original `bangka_dataset.csv` (which was
 provided as source material by Thomas Smits; original compiler undocumented).
-The original now lives in [`archive/bangka_dataset.csv`](archive/bangka_dataset.csv).
+The original now lives in
+[`legacy-v2/archive/bangka_dataset.csv`](legacy-v2/archive/bangka_dataset.csv);
+this file itself is [`legacy-v2/bangka_dataset_v2.csv`](legacy-v2/bangka_dataset_v2.csv).
 
 ### Corrections applied
 _All figures below are the actual diff between `archive/bangka_dataset.csv` and
