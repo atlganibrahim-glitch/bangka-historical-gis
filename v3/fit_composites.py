@@ -1,12 +1,19 @@
 # -*- coding: utf-8 -*-
-"""Decide, from the map's own shoreline, which edge each composite anchors on.
+"""SUPERSEDED - an early draft of what fit_irregular.py became.
 
-A composite covers one land cell plus a slice of its sea-side companion.  The
-question is which end of the slice sits on the cell boundary.  The two answers
-differ by the whole overflow (0.3-4.5 km here), so the modern shoreline settles
-it: the sheet is placed under each hypothesis, the shoreline is fitted freely
-over a wide window, and the hypothesis whose fitted correction is near zero is
-the right one.
+Kept only so a search for this filename lands somewhere; there is no reason
+to run it. fit_irregular.py covers the same 12 composites plus the 2
+irregular single-letter sheets fit_composites.py never handled, and its
+results (not this script's) are what grid.py's IRREGULAR_ANCHOR table and
+the published anchors are based on.
+
+Original docstring, for context: decide, from the map's own shoreline, which
+edge each composite anchors on. A composite covers one land cell plus a slice
+of its sea-side companion. The question is which end of the slice sits on
+the cell boundary. The two answers differ by the whole overflow
+(0.3-4.5 km here), so the modern shoreline settles it: the sheet is placed
+under each hypothesis, the shoreline is fitted freely over a wide window,
+and the hypothesis whose fitted correction is near zero is the right one.
 """
 import os
 import sys

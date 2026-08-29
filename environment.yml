@@ -9,3 +9,4 @@ dependencies:
   - pillow          # PIL — map_crop.py, v3/*
   - opencv          # cv2  — map_crop.py, v3/*
   - rasterio        # v3/georeference.py and the rest of v3/*
+  - pyogrio         # v3/analyse_control_points.py, v3/clean_control_points.py

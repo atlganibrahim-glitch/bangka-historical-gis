@@ -109,7 +109,7 @@ bangka-historical-gis/
 ├── ACCURACY_ASSESSMENT.md    # How far the result can be trusted, and where it can't
 ├── CONTROL_POINTS_HOWTO.md   # Procedure for extending the manual accuracy check
 ├── CHANGELOG.md
-├── bangka_dataset_v3_1.csv   # Current metadata (176 sheets)
+├── bangka_dataset_v3_1.csv   # Current metadata (176 sheets) — use this
 ├── bangka_sheet_quality.csv  # Per-sheet positional confidence + land area
 ├── environment.yml
 │
@@ -117,6 +117,7 @@ bangka-historical-gis/
 │   ├── grid.py                #   sheet geometry: crop pixels -> WGS 84
 │   ├── georeference.py        #   writes the 176 GeoTIFFs
 │   ├── sheet_to_wgs84.py      #   pixel -> lon/lat helper
+│   ├── bangka_dataset_v3.csv  #   metadata for the *uncorrected* v3.0 (not v3.1) — see V3_REPORT.md
 │   └── ...                    #   accuracy tests, verification, figures
 │
 ├── figures/                   # Regenerate with v3/make_figures.py
@@ -140,6 +141,7 @@ conda activate bangka-gis
 
 ```bash
 # Run from the repository root. Expects the crops in new_crops/map/*.jpg.
+python v3/fetch_osm.py            # OSM coastline + roads for the accuracy checks below
 python v3/scan_frames.py          # measure every printed neatline
 python v3/build_masks.py          # cache sea masks / shorelines
 python v3/fit_irregular.py        # decide composite/irregular anchors vs OSM shoreline

@@ -42,6 +42,8 @@ sheet interior by up to 7 %, i.e. **≈ 700 m of misregistration** at the far
 edge. They are coastal sheets printed past their cell, exactly like the twelve
 two-letter composites.
 
+![33-XXVI-d's printed frame against one graticule cell](figures/irregular_sheet.png)
+
 **c. Crops were cut on fixed percentages, not on the frame.**
 The old `map_crop.py` used a hard-coded ratio (`1 - 4102/5174`) for the bottom
 margin, so marginal text such as "Reproductiebedrijf Topografische dienst,
@@ -153,6 +155,8 @@ island scale in QGIS without pyramid building.
 | structural sheet overlaps | **0** |
 | double-painted mosaic area | 0.046 % |
 | anchors confirmed against modern shoreline | **10 / 10 decisive cases** |
+
+![All 176 sheets, red outlines showing no structural overlap](figures/mosaic_v3.png)
 
 ### Absolute accuracy against modern imagery
 
@@ -287,6 +291,7 @@ two sets differ by a pure translation and nothing else.
 ## 6. Reproducing
 
 ```bash
+python v3/fetch_osm.py         # coastline + roads for the checks below -> v3/osm_*.json
 python v3/scan_frames.py       # measure every printed neatline -> v3/frames.csv
 python v3/build_masks.py       # cache sea masks / shorelines   -> v3/masks/
 python v3/fit_irregular.py     # decide anchors against OSM
@@ -302,7 +307,7 @@ python v3/sheet_quality.py     # per-sheet quality  -> bangka_sheet_quality.csv
 python v3/make_figures.py      # every figure in this report and the README -> figures/
 ```
 
-Requires `numpy pandas pillow opencv-python rasterio`. OSM extracts are cached
+Requires `numpy pandas pillow opencv-python rasterio pyogrio`. OSM extracts are cached
 in `v3/osm_coastline.json` (`natural=coastline`) and `v3/osm_roads.json`
 (`highway=*`), both Overpass, Bangka bbox. `make_figures.py` additionally
 fetches a few dozen OpenStreetMap raster tiles for the overlay figure, cached
