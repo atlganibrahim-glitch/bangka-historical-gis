@@ -140,7 +140,7 @@ existing numbers and tests the interior question, but says almost nothing
 about the ~60% of the island that no test has verified. Extending the same
 exercise to 5–6 B-grade sheets — especially `34-XXVI-p` and `34-XXVI-q`,
 where the road fit scattered badly — would settle that; the procedure is
-documented in `MANUEL_KONTROL.md`.
+documented in `CONTROL_POINTS_HOWTO.md`.
 
 ### 2.5 Anchor-edge correctness (composite and irregular sheets only)
 

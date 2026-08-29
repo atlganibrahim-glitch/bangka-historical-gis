@@ -39,7 +39,7 @@ Map margins (legends and white borders) were trimmed to produce `crop_*.jpg` fil
    from raw scans (`main maps`). Seven are vertical composite sheets; `crop_056` (`33-XXVI-d`)
    is actually a **single-cell sheet** (not a composite — it was simply cropped taller).
 3. **Terminology clarification:** The archive contains **12 true composite sheets** (two-letter
-   sub-codes), not 8. Composite sheets are coastal; one hücre contains land, the adjacent one
+   sub-codes), not 8. Composite sheets are coastal; one cell contains land, the adjacent one
    is largely sea and was clipped away during cropping. This is not data loss but reflects the
    sheet's physical content.
 

@@ -58,6 +58,12 @@ steps are in `V3_REPORT.md`.
 - **Coastal accuracy** bottoms out around 780 m — that's mostly 90 years of
   real coastline change, not georeferencing error (details in the report).
 
+**Before relying on these numbers, read
+[`ACCURACY_ASSESSMENT.md`](ACCURACY_ASSESSMENT.md).** It sets out what each
+test does and does not establish — in particular that only about 30% of the
+island's land area has been independently verified, and that the rest is
+unmeasured rather than known-good.
+
 ## Getting the Data
 
 **📦 https://huggingface.co/datasets/ibrahimatlgn/bangka-1930s-topographic-maps**
@@ -99,7 +105,9 @@ pipeline and the accuracy metrics are the repository owner's own work.
 ```text
 bangka-historical-gis/
 ├── README.md                 # This file
-├── V3_REPORT.md              # Methodology, findings, accuracy — start here
+├── V3_REPORT.md              # How the sheets were built — start here
+├── ACCURACY_ASSESSMENT.md    # How far the result can be trusted, and where it can't
+├── CONTROL_POINTS_HOWTO.md   # Procedure for extending the manual accuracy check
 ├── CHANGELOG.md
 ├── bangka_dataset_v3_1.csv   # Current metadata (176 sheets)
 ├── bangka_sheet_quality.csv  # Per-sheet positional confidence + land area
@@ -109,10 +117,10 @@ bangka-historical-gis/
 │   ├── grid.py                #   sheet geometry: crop pixels -> WGS 84
 │   ├── georeference.py        #   writes the 176 GeoTIFFs
 │   ├── sheet_to_wgs84.py      #   pixel -> lon/lat helper
-│   └── ...                    #   detection, verification, figures
+│   └── ...                    #   accuracy tests, verification, figures
 │
 ├── figures/                   # Regenerate with v3/make_figures.py
-├── qgis/                      # Portable QGIS layers (.geojson)
+├── qgis/                      # Portable QGIS layers (.geojson, .gpkg)
 │
 └── legacy-v2/                 # Superseded — see legacy-v2/README.md
 
