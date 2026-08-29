@@ -63,3 +63,14 @@ QGIS_KONTROL.md
 
 # Figure tile cache (regenerable; fetched by v3/make_figures.py)
 v3/tilecache/
+
+# Landsat scenes fetched by v3/landsat_coast.py (regenerable from the STAC API)
+v3/landsat/
+
+# SQLite journal files - present only while QGIS holds a GeoPackage open
+*.gpkg-shm
+*.gpkg-wal
+
+# Superseded by control_points.gpkg; QGIS could not reliably commit edits to a
+# GeoJSON in place, which is why the control points live in a GeoPackage.
+qgis/control_points.geojson
