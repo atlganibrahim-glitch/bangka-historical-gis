@@ -41,7 +41,7 @@ def shift_old_to_new(old_path, new_path, reduce=REDUCE):
 
 
 def main():
-    df = pd.read_csv(os.path.join(ROOT, 'bangka_dataset_v2.csv'))
+    df = pd.read_csv(grid.v2_metadata_path())
     rows = []
     for _, r in df.iterrows():
         old = os.path.join(ROOT, 'recovered_maps', str(r['crop_filename']))

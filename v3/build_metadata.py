@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
-"""bangka_dataset_v3.csv - one row per sheet, carrying the actual v3 geometry."""
+"""bangka_dataset_v3_1.csv - one row per sheet, carrying the actual geometry.
+
+Named v3_1 because grid.py carries the v3.1 inland correction; with that
+correction zeroed the same script reproduces the v3.0 table, kept for
+reference as v3/bangka_dataset_v3.csv.
+"""
 import csv
 import os
 import sys
@@ -19,10 +24,10 @@ COLS = ['sheet_id', 'kind', 'label', 'source_filename', 'crop_filename',
 
 
 def main():
-    old = pd.read_csv(os.path.join(ROOT, 'bangka_dataset_v2.csv')).set_index('sheet_id')
+    old = pd.read_csv(grid.v2_metadata_path()).set_index('sheet_id')
     ids = sorted(os.path.splitext(f)[0] for f in os.listdir(grid.CROP_DIR)
                  if f.endswith('.jpg'))
-    out = os.path.join(ROOT, 'bangka_dataset_v3.csv')
+    out = os.path.join(ROOT, 'bangka_dataset_v3_1.csv')
     with open(out, 'w', newline='', encoding='utf-8') as fh:
         w = csv.DictWriter(fh, COLS)
         w.writeheader()

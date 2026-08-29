@@ -59,7 +59,7 @@ def load_sea(sid):
 
 def main():
     idx = {}
-    with open(os.path.join(ROOT, 'bangka_dataset_v2.csv'), encoding='utf-8') as fh:
+    with open(grid.v2_metadata_path(), encoding='utf-8') as fh:
         for r in csv.DictReader(fh):
             idx[r['sheet_id']] = int(r['image_idx'])
 

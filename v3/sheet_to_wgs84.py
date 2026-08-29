@@ -51,11 +51,25 @@ def crop_shifts():
 
 
 def index_to_sheet():
-    """image_idx (0-175, as used in the v2 metadata) -> sheet_id."""
+    """image_idx (0-175, as used in the v2 metadata) -> sheet_id.
+
+    image_idx only ever existed in the v2 metadata, which now lives under
+    legacy-v2/; the repo root is checked first so an older checkout still
+    works.
+    """
     global _idx2sheet
     if _idx2sheet is None:
+        for rel in ('bangka_dataset_v2.csv',
+                    os.path.join('legacy-v2', 'bangka_dataset_v2.csv')):
+            path = os.path.join(ROOT, rel)
+            if os.path.exists(path):
+                break
+        else:
+            raise FileNotFoundError(
+                'bangka_dataset_v2.csv not found in the repo root or legacy-v2/; '
+                'it is the only source of the image_idx -> sheet_id mapping.')
         _idx2sheet = {}
-        with open(os.path.join(ROOT, 'bangka_dataset_v2.csv'), encoding='utf-8') as fh:
+        with open(path, encoding='utf-8') as fh:
             for r in csv.DictReader(fh):
                 _idx2sheet[int(r['image_idx'])] = r['sheet_id']
     return _idx2sheet

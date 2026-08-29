@@ -76,6 +76,23 @@ def frames():
     return _frames
 
 
+def v2_metadata_path():
+    """Locate bangka_dataset_v2.csv.
+
+    It moved into legacy-v2/ when the repository was reorganised, but it is
+    still the only source of the image_idx -> sheet_id mapping and of the v2
+    crop filenames, so several v3 scripts need it. The old root location is
+    tried first so an older checkout keeps working.
+    """
+    for rel in ('bangka_dataset_v2.csv',
+                os.path.join('legacy-v2', 'bangka_dataset_v2.csv')):
+        path = os.path.join(ROOT, rel)
+        if os.path.exists(path):
+            return path
+    raise FileNotFoundError(
+        'bangka_dataset_v2.csv not found in the repository root or legacy-v2/')
+
+
 def cell_index(sheet_id):
     col_s, roman, sub = sheet_id.split('-')
     bc, br = (int(col_s) - 32) * 4, (ROMAN[roman] - 25) * 4

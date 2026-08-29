@@ -51,7 +51,7 @@ def residual(pts, dist, meta):
 
 def main():
     segs = coastfit.load_osm()
-    v2map = pd.read_csv(os.path.join(ROOT, 'bangka_dataset_v2.csv')).set_index('sheet_id')
+    v2map = pd.read_csv(grid.v2_metadata_path()).set_index('sheet_id')
     rows = []
     for sid in sorted(os.path.splitext(f)[0] for f in os.listdir(grid.CROP_DIR)):
         kind = 'composite' if len(sid.split('-')[2]) == 2 else 'single'
